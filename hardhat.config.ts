@@ -3,7 +3,7 @@ import "@nomicfoundation/hardhat-toolbox";
 // https://github.com/projectsophon/hardhat-circom
 import "hardhat-circom";
 // circuits
-import circuits = require('./circuits.config.json')
+import circuits = require('./circuits.config.json');
 
 // set env var to the root of the project
 process.env.BASE_PATH = __dirname;
@@ -21,6 +21,12 @@ const config: HardhatUserConfig = {
         version: "0.6.11",
       }
     ]
+  },
+  networks: {
+    sepolia: {
+      url: "https://eth-sepolia.g.alchemy.com/v2/K6SycLg403bqGvTfRLOyHD6kaXlsF3qH", // Replace with your Alchemy API key
+      accounts: ["4d24f1044bfb7afc0070ba71ce17f7bc9a9413165e657c4819fb79954a7c875b"], // Replace with your private key
+    },
   },
   circom: {
     // (optional) Base path for input files, defaults to `./circuits/`
